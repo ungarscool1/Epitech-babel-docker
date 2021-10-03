@@ -20,3 +20,6 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v3.21.3/cmake-3.21.3
     rm -rf cmake-3.21.3-linux-x86_64.sh
 
 RUN pip install conan
+
+RUN conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/public-conan; \
+    conan config set general.revisions_enabled=1
