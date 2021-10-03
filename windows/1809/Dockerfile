@@ -19,7 +19,7 @@ RUN C:\Temp\vs_buildtools.exe `
 
 RUN C:\TEMP\conan.exe /SILENT /NOCANCEL /NORESTART /NOICONS
 
-RUN conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/public-conan; `
+RUN conan remote add bincrafters https://bincrafters.jfrog.io/artifactory/api/conan/public-conan && `
     conan config set general.revisions_enabled=1
 
 ENTRYPOINT ["C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\BuildTools\\Common7\\Tools\\VsDevCmd.bat", "&&", "powershell.exe", "-NoLogo", "-ExecutionPolicy", "Bypass"]
